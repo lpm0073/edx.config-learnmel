@@ -1,0 +1,22 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%! from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers %>
+${_("Recibimos una solicitud para cambiar el correo electrónico asociado con su cuenta de”
+    " {platform_name} de {old_email} a {new_email}. "
+    "Si esto es correcto, confirme su nueva dirección de correo electrónico "
+    "visitando:”).format(
+        platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME),
+        old_email=old_email,
+        new_email=new_email
+    )
+}
+
+% if is_secure:
+ https://${ site }/email_confirm/${ key }
+% else:
+ http://${ site }/email_confirm/${ key }
+% endif
+
+${_(“Si no solicitó esto, no necesita realizar nada; no recibirá "
+  “más correos departe de nosotros. Por favor, no conteste este correo electrónico; "
+  “si requiere ayuda, revise la sección de ayuda de "
+  "{platform_name} en nuestra página”).format(platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME))}

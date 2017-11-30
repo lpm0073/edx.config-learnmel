@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1265.21">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times}
+    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;%page expression_filter="h"/&gt; &lt;%! from django.utils.translation import ugettext as _ from openedx.core.djangolib.markup import HTML, Text %&gt;</p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times"><b>${_(“Ya casi estas listo!”)}</b></h2>
+<p class="p3">${Text(_( “Sólo hay un paso más: Antes " “de inscribirse en un curso, necesita activar " “su cuenta. Hemos enviado un correo a " "{email_start}{email}{email_end} con " “instrucciones para activar su cuenta. Si " “no recibe el correo, revise " “la bandeja de correo no deseado.” )).format( email_start=HTML("<b>"), email_end=HTML("</b>"), email=email, )}</p>
+</body>
+</html>

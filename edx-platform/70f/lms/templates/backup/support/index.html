@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1265.21">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times}
+    li.li1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times}
+    span.s1 {color: #0000ee}
+    span.s2 {text-decoration: underline}
+    ul.ul1 {list-style-type: disc}
+  </style>
+</head>
+<body>
+<p class="p1">## mako &lt;%! from django.core.urlresolvers import reverse from django.utils.translation import ugettext as _ %&gt; &lt;%namespace name='static' file='../static_content.html'/&gt; &lt;%inherit file="../main.html" /&gt; &lt;%block name="pagetitle"&gt; ${_("Student Support")} &lt;%block name="content"&gt;</p>
+<h1 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times"><b>${_(“Soporte Participante”)}</b></h1>
+<ul class="ul1">
+  <li class="li1">% for url in urls:</li>
+  <li class="li1"><span class="s1"><a href="file:///Users/Fadrique/Dropbox/enlinea/cursos.enlinea.in/plantillas/edx-templates/4-support/$%7Burl%5B"><span class="s2">${unicode(url["name"])}</span></a></span>: ${unicode(url["description"])}</li>
+  <li class="li1">% endfor</li>
+</ul>
+</body>
+</html>

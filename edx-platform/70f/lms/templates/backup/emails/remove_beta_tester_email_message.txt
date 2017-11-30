@@ -1,0 +1,18 @@
+<%! from django.utils.translation import ugettext as _ %>
+
+${_(“Estimad@ {full_name}").format(full_name=full_name)}
+
+${_(“Ha sido eliminado de la prueba piloto de {course_name} en {site_name} por algún "
+	"miembro del personal del curso. El curso permanecerá en su escritorio, pero "
+	"ya no serás parte del grupo de prueba.").format(
+		course_name=course.display_name_with_default_escaped,
+		site_name=site_name
+	)}
+
+${_("Sus otros cursos no han sido afectados.")}
+
+----
+${_(“Este correo electrónico fue enviado automáticamente de {site_name} para "
+	"{email_address}").format(
+		site_name=site_name, email_address=email_address
+	)}

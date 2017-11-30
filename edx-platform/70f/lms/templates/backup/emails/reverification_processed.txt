@@ -1,0 +1,27 @@
+<%! from django.utils.translation import ugettext as _ %>
+% if status == "approved":
+${_("Hemos verificado con éxito su identidad para la evaluación {assessment} en el curso {course_name}."
+).format(course_name=course_name, assessment=assessment)}
+
+% elif is_attempt_allowed and verification_open:    # if attempts are allowed and verification is still open.
+${_("No pudimos verificar su identidad para la evaluación {assessment} en el curso {course_name}. Has utilizado {used_attempts} de {allowed_attempts} intentos para verificar tu identidad.”
+).format(course_name=course_name, assessment=assessment, used_attempts=used_attempts, allowed_attempts=allowed_attempts)}
+%if due_date:
+${_("Debe verificar su identidad antes de que finalice la evaluación  {due_date}.").format(due_date=due_date)}
+%endif
+
+${_("Para tratar de verificar su identidad nuevamente, seleccione el siguiente enlace:")}
+${reverify_link}
+
+% elif not is_attempt_allowed or not verification_open:    # if attempts are not allowed or verification window is closed
+${_("No pudimos verificar su identidad para la evaluación {assessment} en el curso {course_name}. Has utilizado {used_attempts} de {allowed_attempts} intentos para verificar tu identidad, y la verificación ya no es posible."
+).format(course_name=course_name, assessment=assessment, used_attempts=used_attempts, allowed_attempts=allowed_attempts)}
+%endif
+
+${_("Para ir al curso, seleccione el siguiente enlace:")}
+${course_link}
+
+${_("Si tiene alguna pregunta, puede contactarnos en {support_link}.").format(support_link=support_link)}
+
+${_(“Gracias,”)}
+${_(“Los miembros del equipo de {platform_name}").format(platform_name=platform_name)}

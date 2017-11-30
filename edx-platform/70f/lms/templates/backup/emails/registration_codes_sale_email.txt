@@ -1,0 +1,30 @@
+<%! from django.utils.translation import ugettext as _ %>
+
+${_(“Gracias por comprar {course_name}.").format(course_name=course.display_name)}
+
+${_(“Se anexa una factura por {currency_symbol}{total_price}. El pago se aplicará una vez recibido. Puede encontrar información sobre los métodos de pago en la factura.").format(currency_symbol=currency_symbol, total_price=sale_price)}
+
+${_("Se adjunta un archivo .csv que enumera sus códigos de inscripción. Puede usar la plantilla de correo electrónico a continuación para distribuir los códigos de inscripción a sus alumnos. Cada estudiante debe usar un código de inscripción por separado.")}
+
+## Translators: This is the signature of an email.  "\n" is a newline character
+## and should be placed between the closing word and the signature.
+${_(“Gracias,\nLos miembros del equipo de {platform_name}").format(platform_name=platform_name)}
+
+
+———————————————————————————————————————————
+
+
+## Translators: please translate the text inside [[ ]]. This is meant as a template for course teams to use.
+${_(“Estimad@ [[Name]]:")}
+
+## Translators: please translate the text inside [[ ]]. This is meant as a template for course teams to use.
+${_("Le hemos proporcionado un código de inscripción al curso en {course_name}. Para inscribirse en el curso, haga clic en el siguiente enlace:").format(course_name=course.display_name)}
+
+[[${_("HTML link from the attached CSV file")}]]
+
+${_("Después de inscribirse, puede ver el curso en el escritorio de sus alumnos. Puede ver los materiales del curso después de la fecha de inicio del curso.")}
+
+## Translators: please translate the text inside [[ ]]. This is meant as a template for course teams to use.
+## This is the signature of an email.  "\n" is a newline character
+## and should be placed between the closing word and the signature.
+${_(“Atentamente,\n[[Your Signature]]")}

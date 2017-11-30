@@ -1,0 +1,20 @@
+<%! from django.core.urlresolvers import reverse %>
+<%! from django.utils.translation import ugettext as _ %>
+<%! from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers %>
+${_("Esto es para confirmar que ha cambiado el correo electrónico asociado con"
+  "{platform_name} de {old_email} a {new_email}. Si usted "
+  "no hizo esta solicitud, contáctenos inmediatamente. La "
+  "la información de contacto se encuentra en:").format(
+      platform_name=configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME),
+      old_email=old_email,
+      new_email=new_email
+  )
+}
+
+% if is_secure:
+    https://${ site }${reverse('contact')}
+% else:
+    http://${ site }${reverse('contact')}
+% endif
+
+${_("Mantenemos un registro de correos electrónicos antiguos, por lo que si esta solicitud no fue intencional, podemos investigar.")}

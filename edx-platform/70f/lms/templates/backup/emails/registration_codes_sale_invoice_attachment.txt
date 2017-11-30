@@ -1,0 +1,42 @@
+<%! from django.utils.translation import ugettext as _ %>
+${_(“FACTU”RA)}
+
+———————————————————————————————————————————
+
+${corp_address}
+
+${_(“Fecha: {date}").format(date=date)}
+${_(“Factura No: {invoice_number}").format(invoice_number=invoice.id)}
+${_("Términos: Se aplica el pago cuando se reciba en su totalidad”)}
+${_(“Fecha de vencimiento: {date}").format(date=date)}
+
+${_(“Cobrar a:”)}
+${invoice.company_name}
+${invoice.address_line_1}
+% if invoice.address_line_2:
+${invoice.address_line_2}
+% endif
+% if invoice.address_line_3:
+${invoice.address_line_3}
+% endif
+${invoice.city}, ${invoice.state}, ${invoice.zip}
+${invoice.country}
+${_("Número de referencia del cliente: {reference_number}").format(reference_number=invoice.customer_reference_number if invoice.customer_reference_number else "")}
+
+                                        ${_(“Saldo: {currency_symbol}{sale_price}").format(currency_symbol=currency_symbol, sale_price=sale_price)}
+
+———————————————————————————————————————————
+
+${_("Curso: {course_name}").format(course_name=course.display_name)}
+ ${_("Precio:        {currency_symbol}{course_price}  Cantidad:      {quantity}  Sub-Total:    {currency_symbol}{sub_total}  Descuento:  {currency_symbol}{discount}").format(course_price=course_price, quantity=quantity, sub_total=sub_total, discount=discount, currency_symbol=currency_symbol)}
+${_("Total:      {currency_symbol}{sale_price}").format(sale_price=sale_price, currency_symbol=currency_symbol)}
+
+———————————————————————————————————————————
+
+${_(“Instrucciones de Pago”)}
+
+${payment_instructions}
+
+${_("Si no recibimos el pago, las inscripciones de estudiantes que usan estos códigos serán canceladas y los estudiantes no podrán acceder a los materiales del curso. Todas las compras son finales. Para más información, vea la política de cancelaciones de {site_name} ").format(site_name=site_name)}
+
+${_("Para preguntas de pago, contáctese a {contact_email}").format(contact_email=contact_email)}
