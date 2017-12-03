@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rf edx.config-learnmel
-git clone https://github.com/70F/edx.config-learnmel.git
+git clone https://github.com/lpm0073/edx.config-learnmel.git
 chown edxapp -R edx.config-learnmel
 chgrp edxapp -R edx.config-learnmel
 cp /home/ubuntu/edx.config-learnmel/conf/lms.env.json /edx/app/edxapp/lms.env.json
