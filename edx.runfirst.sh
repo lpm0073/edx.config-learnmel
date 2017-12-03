@@ -1,8 +1,6 @@
 #!/bin/bash
 
-cp /home/ubuntu/edx.config-learnmel/edx-platform/cms/envs/common.py /edx/app/edxapp/edx-platform/cms/envs/common.py
-cp /home/ubuntu/edx.config-learnmel/edx-platform/cms/envs/devstack.py /edx/app/edxapp/edx-platform/cms/envs/devstack.py
-cp /home/ubuntu/edx.config-learnmel/edx-platform/lms/envs/aws.py /edx/app/edxapp/edx-platform/lms/envs/aws.py
-cp /home/ubuntu/edx.config-learnmel/edx-platform/lms/envs/common.py /edx/app/edxapp/edx-platform/lms/envs/common.py
-cp /home/ubuntu/edx.config-learnmel/edx-platform/lms/envs/content.py /edx/app/edxapp/edx-platform/lms/envs/content.py
-cp /home/ubuntu/edx.edx.config-learnmel/edx-platform/lms/envs/devstack.py /edx/app/edxapp/edx-platform/lms/envs/devstack.py
+cp /edx/app/edxapp/lms.env.json /edx/app/edxapp/lms.env.json-ORIG
+cp /edx/app/edxapp/lms.auth.json /edx/app/edxapp/lms.auth.json-ORIG
+cp /edx/app/edxapp/cms.env.json /edx/app/edxapp/cms.env.json-ORIG
+cp /edx/app/edxapp/cms.auth.json /edx/app/edxapp/cms.auth.json-ORIG
